@@ -4,6 +4,9 @@ Tibia Viplist is a web application that allows you to track the online status of
 
 	⭐️ If you find Tibia Viplist useful, give it a star ⭐️
 
+## Live version 🌎
+You can use the app at <a href="https://tibiaviplist.vercel.app" target="_blank">https://tibiaviplist.vercel.app</a>.
+
 ## Features
 
 1. Character Management
