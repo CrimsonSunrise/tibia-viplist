@@ -451,7 +451,7 @@ function App() {
 						href="https://github.com/CrimsonSunrise/tibia-viplist"
 						target="_blank"
 					>
-						<GithubIcon /> tibiaviplist
+						<GithubIcon /> tibia-viplist
 					</a>
 					{" "}- Show this repository some love 🤩
 				</span>
