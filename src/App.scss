@@ -205,6 +205,9 @@ body {
 	padding: 20px;
 	
 	.info {
+		font-size: 14px;
+		line-height: 15px;
+		
 		a {
 			display: inline
 		}
@@ -215,6 +218,15 @@ body {
 		gap: 5px;
 		align-items: center;
 		display: inline;
+	}
+	
+	span {
+		display: flex;
+		gap: 5px;
+		a {
+			display: flex;
+			align-items: center;
+		}
 	}
 }
 

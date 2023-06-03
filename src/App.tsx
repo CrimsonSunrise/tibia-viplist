@@ -429,13 +429,24 @@ function App() {
 			</div>
 
 			<div className="socials">
+				<span>
+					<a
+						href="https://github.com/CrimsonSunrise/tibia-viplist"
+						target="_blank"
+					>
+						<GithubIcon /> tibia-viplist
+					</a>{" "}
+					- Show this repository some love 🤩
+				</span>
+
 				<div className="info">
 					<p>
 						Tibia Viplist uses{" "}
 						<a href="https://tibiadata.com" target="_blank">
 							Tibia Data
 						</a>{" "}
-						to fetch near-real-time information about the characters.
+						to fetch near-real-time information about the
+						characters.
 					</p>
 					<p>
 						Tibia and all products related to Tibia are copyright by{" "}
@@ -445,16 +456,6 @@ function App() {
 						.
 					</p>
 				</div>
-
-				<span>
-					<a
-						href="https://github.com/CrimsonSunrise/tibia-viplist"
-						target="_blank"
-					>
-						<GithubIcon /> tibia-viplist
-					</a>
-					{" "}- Show this repository some love 🤩
-				</span>
 			</div>
 
 			<div className="add-viplist shadow">
