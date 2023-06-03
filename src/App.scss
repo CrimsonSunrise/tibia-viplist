@@ -213,19 +213,15 @@ body {
 		}
 	}
 	
-	a {
-		display: flex;
-		gap: 5px;
-		align-items: center;
-		display: inline;
-	}
-	
 	span {
 		display: flex;
 		gap: 5px;
+		white-space: nowrap;
+		
 		a {
 			display: flex;
 			align-items: center;
+			gap: 5px;
 		}
 	}
 }
