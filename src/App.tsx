@@ -70,6 +70,9 @@ function App() {
 
 	useEffect(() => {
 		loadViplists();
+		loadViplistInterval = setInterval(() => {
+			loadViplists();
+		}, 60000);
 		return () => {
 			clearInterval(loadViplistInterval);
 		};
@@ -216,12 +219,6 @@ function App() {
 		setTimeout(() => {
 			characterInputRef.current?.focus();
 		}, 100);
-
-		// Clear interval and set up a new interval for loading viplists
-		clearInterval(loadViplistInterval);
-		loadViplistInterval = setInterval(() => {
-			loadViplists();
-		}, 60000);
 	};
 
 	const addCharacter = async () => {
