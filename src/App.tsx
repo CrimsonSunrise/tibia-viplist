@@ -435,7 +435,7 @@ function App() {
 						<a href="https://tibiadata.com" target="_blank">
 							Tibia Data
 						</a>{" "}
-						to fetch almost-realtime information about tibia game.
+						to fetch near-real-time information about the characters.
 					</p>
 					<p>
 						Tibia and all products related to Tibia are copyright by{" "}

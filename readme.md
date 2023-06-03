@@ -14,7 +14,8 @@ You can use the app at <a href="https://tibiaviplist.vercel.app" target="_blank"
 	* Characters are organized by server (world) for easy navigation.
 	* Characters are visually distinguished as online or offline.
 	* Each character entry displays the character's name, vocation, and level (when online).
-	* Users can delete characters from the viplist.
+	* You can delete characters from the viplist.
+	* You can copy the added character's name by clickling on it.
 2. Near-real-time Character Status
 	* The application fetches character status data from the Tibia Data API.
 	* Characters' online/offline status is automatically updated in near-real-time.
