@@ -448,7 +448,7 @@ function App() {
 
 				<span>
 					<a
-						href="https://github.com/CrimsonSunrise/tibiaviplist"
+						href="https://github.com/CrimsonSunrise/tibia-viplist"
 						target="_blank"
 					>
 						<GithubIcon /> tibiaviplist
