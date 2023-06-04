@@ -3,6 +3,9 @@ import "./App.scss";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import Logo from "./assets/logo.png";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-DZ6E4Y73LC');
 
 interface LoadingSpinnerProps {
 	white?: boolean;
@@ -69,6 +72,7 @@ function App() {
 	let loadViplistInterval = null as ReturnType<typeof setInterval>;
 
 	useEffect(() => {
+		ReactGA.pageview(window.location.pathname + window.location.search);
 		loadViplists();
 		loadViplistInterval = setInterval(() => {
 			loadViplists();
