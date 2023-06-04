@@ -4,6 +4,8 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import Logo from "./assets/logo.png";
 import ReactGA from 'react-ga';
+import { inject } from '@vercel/analytics';
+inject();
 
 ReactGA.initialize('G-DZ6E4Y73LC');
 
