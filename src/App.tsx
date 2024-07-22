@@ -3,11 +3,11 @@ import "./App.scss";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import Logo from "./assets/logo.png";
-import ReactGA from 'react-ga';
-import { inject } from '@vercel/analytics';
+import ReactGA from "react-ga";
+import { inject } from "@vercel/analytics";
 inject();
 
-ReactGA.initialize('G-DZ6E4Y73LC');
+ReactGA.initialize("G-DZ6E4Y73LC");
 
 interface LoadingSpinnerProps {
 	white?: boolean;
@@ -137,13 +137,12 @@ function App() {
 
 				// Fetch online player data for the world
 				const worldOnlineFetch = await fetch(
-					`https://api.tibiadata.com/v3/world/${worldName}`
+					`https://api.tibiadata.com/v4/world/${worldName}`
 				);
 				const onlineListJson = await worldOnlineFetch.json();
-				const onlineList =
-					onlineListJson.worlds.world.online_players.map(
-						(o: any) => o.name
-					);
+				const onlineList = onlineListJson.world.online_players.map(
+					(o: any) => o.name
+				);
 
 				// Process viplist for the world
 				for (const char in viplist[worldName]) {
@@ -157,14 +156,14 @@ function App() {
 					// Get level and vocation if character is online
 					const level =
 						index > -1
-							? onlineListJson.worlds.world.online_players.find(
+							? onlineListJson.world.online_players.find(
 									(char: any) => char.name === name
 							  ).level
 							: null;
 					const vocation =
 						index > -1
 							? normalizeVocation(
-									onlineListJson.worlds.world.online_players.find(
+									onlineListJson.world.online_players.find(
 										(char: any) => char.name === name
 									).vocation
 							  )
@@ -239,11 +238,15 @@ function App() {
 
 		// Fetch character data
 		const result = await fetch(
-			`https://api.tibiadata.com/v3/character/${characterName}`
+			`https://api.tibiadata.com/v4/character/${characterName}`
 		);
 		const response = await result.json();
+		// console.log(response)
 
-		if (response.characters.character.name === newCharacter) {
+		// if (response.information.status.http_code == 200)
+
+		// if (response.character.character.name === newCharacter) {
+		if (response.information.status.http_code == 200) {
 			const currentVipList = localStorage.getItem("viplists");
 			if (currentVipList) {
 				const parsedViplist = JSON.parse(currentVipList);
@@ -251,27 +254,25 @@ function App() {
 				// Check if character already exists in the viplist for the world
 				if (
 					parsedViplist.hasOwnProperty(
-						response.characters.character.world
+						response.character.character.world
 					)
 				) {
 					const foundChar = parsedViplist[
-						response.characters.character.world
+						response.character.character.world
 					].find((c: any) => c.name === newCharacter);
 
 					if (!foundChar) {
 						// Add new character to the viplist for the world
-						parsedViplist[response.characters.character.world].push(
-							{
-								name: response.characters.character.name,
-								status: "offline",
-							}
-						);
+						parsedViplist[response.character.character.world].push({
+							name: response.character.character.name,
+							status: "offline",
+						});
 					}
 				} else {
 					// Create a new viplist entry for the world and add the character
-					parsedViplist[response.characters.character.world] = [
+					parsedViplist[response.character.character.world] = [
 						{
-							name: response.characters.character.name,
+							name: response.character.character.name,
 							status: "offline",
 						},
 					];
@@ -283,9 +284,9 @@ function App() {
 			} else {
 				// Create a new viplist and add the character
 				const viplist: Record<string, any> = {};
-				viplist[response.characters.character.world] = [
+				viplist[response.character.character.world] = [
 					{
-						name: response.characters.character.name,
+						name: response.character.character.name,
 						status: "offline",
 					},
 				];
